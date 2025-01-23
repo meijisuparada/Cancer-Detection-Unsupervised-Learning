@@ -14,6 +14,7 @@ Outlier Detection: Applying advanced techniques to isolate potential high-risk c
 Performance Metrics: Sensitivity and precision were prioritized, with a specific focus on minimizing false negatives.
 
 <img width="828" alt="Screenshot 2025-01-22 at 20 31 39" src="https://github.com/user-attachments/assets/4a813546-d736-4f36-9f6f-707110c48c8c" />
+
 ### Interpretation of PCA
 PC1 captures 37.78% of the variance, with each subsequent component contributing progressively less. Principal components are designed to maximize the variance captured, with each adding unique and meaningful information. Based on the pca result, to meet the goal of **capturing 97% of the total variance, the first 12 principal components are required**. Utilizing these components significantly reduces the dataset's dimensionality while retaining most of its critical information. This approach ensures the model effectively represents the underlying patterns in the data, enhancing its accuracy and interpretability.
 
@@ -32,7 +33,6 @@ Clusters 1 and 3 demonstrate distinct cancer-related characteristics based on th
 **Cluster 3**: A cancer proportion of 1.0 indicates that this cluster exclusively consists of cancerous cases. This makes Cluster 3 a strong indicator of cancer-related data and highlights its potential utility in identifying clear-cut cancer diagnoses.
 
 These insights suggest that while Cluster 3 is highly specific to cancer cases, Cluster 1 may represent patients with mixed or ambiguous health indicators, offering opportunities to refine detection in borderline cases.
-
 
 
 <img width="333" alt="Screenshot 2025-01-22 at 20 34 12" src="https://github.com/user-attachments/assets/2f226f11-e46a-47cb-b599-3afd4aa3d603" />
