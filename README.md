@@ -13,6 +13,12 @@ Clustering Analysis: Using methods such as k-means and hierarchical clustering t
 Outlier Detection: Applying advanced techniques to isolate potential high-risk cases.
 Performance Metrics: Sensitivity and precision were prioritized, with a specific focus on minimizing false negatives.
 
+### Interpretation of PCA
+PC1 captures 37.78% of the variance, with each subsequent component contributing progressively less. Principal components are designed to maximize the variance captured, with each adding unique and meaningful information. Based on the pca result, to meet the goal of **capturing 97% of the total variance, the first 12 principal components are required**. Utilizing these components significantly reduces the dataset's dimensionality while retaining most of its critical information. This approach ensures the model effectively represents the underlying patterns in the data, enhancing its accuracy and interpretability.
+
+<img width="828" alt="Screenshot 2025-01-22 at 20 31 39" src="https://github.com/user-attachments/assets/4a813546-d736-4f36-9f6f-707110c48c8c" />
+
+
 ## Conclusion
 In this analysis, unsupervised learning methods, specifically K-Means clustering and KNN-based outlier detection, were evaluated for their effectiveness in identifying cancer cases from patient health data. While these methods offer unique strengths, their limitations underscore the need for careful implementation and integration into clinical workflows. The focus throughout this analysis has been on **minimizing False Negatives**—ensuring that no cancer cases are missed—while also acknowledging the impact of False Positives, which can result in unnecessary testing and patient anxiety.
 
