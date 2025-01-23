@@ -13,11 +13,36 @@ Clustering Analysis: Using methods such as k-means and hierarchical clustering t
 Outlier Detection: Applying advanced techniques to isolate potential high-risk cases.
 Performance Metrics: Sensitivity and precision were prioritized, with a specific focus on minimizing false negatives.
 
+<img width="828" alt="Screenshot 2025-01-22 at 20 31 39" src="https://github.com/user-attachments/assets/4a813546-d736-4f36-9f6f-707110c48c8c" />
 ### Interpretation of PCA
 PC1 captures 37.78% of the variance, with each subsequent component contributing progressively less. Principal components are designed to maximize the variance captured, with each adding unique and meaningful information. Based on the pca result, to meet the goal of **capturing 97% of the total variance, the first 12 principal components are required**. Utilizing these components significantly reduces the dataset's dimensionality while retaining most of its critical information. This approach ensures the model effectively represents the underlying patterns in the data, enhancing its accuracy and interpretability.
 
-<img width="828" alt="Screenshot 2025-01-22 at 20 31 39" src="https://github.com/user-attachments/assets/4a813546-d736-4f36-9f6f-707110c48c8c" />
+![image](https://github.com/user-attachments/assets/b984f2ad-a075-4b7c-9839-8755062cdbbb)
 
+#### Insight from KNN Outlier Dectection Visual
+The dark blue points (Outlier = 0) represent data points that are considered within the "normal" range, meaning their KNN scores fall below the threshold set for outlier detection. The pink points (Outlier = 1) indicate the outliers, which are data points with KNN scores above the defined threshold (10%). However, the separation between outliers and normal points is not perfectly clear-cut. WE need to perform a confusion matrix analysis to evaluate the effectiveness of the outlier detection in identifying actual cancer cases.
+
+#### Selecting Cancerous Clusters
+<img width="347" alt="Screenshot 2025-01-22 at 20 33 35" src="https://github.com/user-attachments/assets/25fce1af-4cb5-42b5-8af7-9884fc2b63e0" />
+
+Clusters 1 and 3 demonstrate distinct cancer-related characteristics based on their "Cancer_Proportion" values:
+
+**Cluster 1**: With a cancer proportion of approximately 0.1379, this cluster likely contains a mix of cancerous and non-cancerous cases. While cancer-related data is present, it is not the dominant pattern, suggesting the cluster captures subtle overlaps or borderline cases.
+
+**Cluster 3**: A cancer proportion of 1.0 indicates that this cluster exclusively consists of cancerous cases. This makes Cluster 3 a strong indicator of cancer-related data and highlights its potential utility in identifying clear-cut cancer diagnoses.
+
+These insights suggest that while Cluster 3 is highly specific to cancer cases, Cluster 1 may represent patients with mixed or ambiguous health indicators, offering opportunities to refine detection in borderline cases.
+
+
+
+<img width="333" alt="Screenshot 2025-01-22 at 20 34 12" src="https://github.com/user-attachments/assets/2f226f11-e46a-47cb-b599-3afd4aa3d603" />
+
+#### Insights from K-Means Confusion Matrix
+- Sensitivity (0.90476): The model is highly effective at identifying true positives (cancer cases). This aligns with the objective of minimizing false negatives, as missing cancer cases is critical.
+
+- Specificity (0.78992): The model correctly identifies approximately 79.99% of non-cancer cases, though there is room for improvement to reduce false positives.
+
+Overall, the model performs exceptionally well in sensitivity, aligning with the goal of minimizing missed cancer cases. However, its practical application would require addressing the high false positive rate to ensure efficient use of medical resources.
 
 ## Conclusion
 In this analysis, unsupervised learning methods, specifically K-Means clustering and KNN-based outlier detection, were evaluated for their effectiveness in identifying cancer cases from patient health data. While these methods offer unique strengths, their limitations underscore the need for careful implementation and integration into clinical workflows. The focus throughout this analysis has been on **minimizing False Negatives**—ensuring that no cancer cases are missed—while also acknowledging the impact of False Positives, which can result in unnecessary testing and patient anxiety.
